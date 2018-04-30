@@ -7,9 +7,9 @@
 This is an Angular app consuming the [Star Wars API](https://swapi.co) and based on [https://github.com/gdi2290/angular-starter/](https://github.com/gdi2290/angular-starter/)
 
 ###### The AoT/prod bundled version is hosted at:
-[https://julien-tmp.github.io/angular-showcase-code/](https://julien-tmp.github.io/angular-showcase-code)
+[https://julien-tmp.github.io/angular-showcase-code-dist/](https://julien-tmp.github.io/angular-showcase-code)
 ###### And you can browse the project documentation at: 
-[https://julien-tmp.github.io/angular-showcase-code/doc/overview.html](https://julien-tmp.github.io/angular-showcase-code/doc/overview.html)
+[https://julien-tmp.github.io/angular-showcase-code-dist/doc/overview.html](https://julien-tmp.github.io/angular-showcase-code/doc/overview.html)
 
 #### What could be improved?
 - Improve the documentation coverage
