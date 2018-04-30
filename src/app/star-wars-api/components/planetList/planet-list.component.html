@@ -1,0 +1,29 @@
+<div>
+    <ngx-datatable #planetList class="bootstrap"
+                [rows]="planets$ | async"
+                [sorts]="[{prop: 'id', dir: 'asc'}]"
+                [columnMode]="'force'"
+                [headerHeight]="40"
+                [summaryPosition]="'bottom'"
+                [footerHeight]="40"
+                [limit]="15"
+                [rowHeight]="'auto'">
+
+        <ngx-datatable-column name="Name of the planet / Species present there" prop="name">
+            <ng-template let-value="value" let-row="row" ngx-datatable-cell-template>
+                <b>{{value}}</b> <br>
+                <u>Species</u>:
+                <span *ngFor="let species of row.species">
+                <button type="button" class="btn btn-outline-primary species-button" (click)="toggledChange.emit(species.id-1)"
+                   [attr.aria-expanded]="!isCollapsed" aria-controls="collapseSide">{{species.name}}</button>
+                </span>
+            </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="Diameter (km)" prop="diameter">
+            <ng-template let-value="value" ngx-datatable-cell-template>
+                {{value}}
+            </ng-template>
+        </ngx-datatable-column>
+
+    </ngx-datatable>
+</div>

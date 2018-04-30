@@ -1,0 +1,18 @@
+<div class="card">
+
+    <div class="card-body" *ngIf="currentSpecies">
+        <button type="button" class="close" aria-label="Close" (click)="toggledChange.emit(currentSpecies.id-1)">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h5 class="card-title">Species details</h5>
+        <div class="card-text">
+        <p>Name: <b>{{currentSpecies.name}}</b></p>
+        <p>Home planet: <b>{{speciesPlanet}}</b></p>
+        <p>Classification: <b>{{currentSpecies.classification}}</b></p>
+        <p>Language: <b>{{currentSpecies.language}}</b></p>
+
+        </div>
+
+
+    </div>
+</div>

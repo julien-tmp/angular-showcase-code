@@ -1,0 +1,33 @@
+<div>
+    <div class="container-fluid">
+        <p *ngIf="planetsLoaded$">You main click on a species to display its details.</p>
+        <div class="row">
+            <div [ngClass]="isCollapsed ? 'col-sm-12' : 'col-sm-9'">
+                <planet-list *ngIf="planetsLoaded$ | async; else loading" [planets$]="planets$"
+                             [isCollapsed]="isCollapsed"
+                             (toggledChange)="changeCurrentSpecies($event)"
+                >
+                </planet-list>
+                <ng-template #loading>
+                    <div>
+                        <p>Loading the API... This will take a while!</p>
+                        <p>We could cache data with a plugin like ngx-webstorage to avoid
+                            that.</p>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated"
+                                 role="progressbar" aria-valuenow="75" aria-valuemin="0"
+                                 aria-valuemax="100" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </ng-template>
+            </div>
+            <species-detail [ngClass]="isCollapsed ? 'col-sm-0' : 'col-sm-3'"
+                            id="collapseSide" [ngbCollapse]="isCollapsed"
+                            [currentSpecies]="currentSpecies"
+                            [speciesPlanet]="currentPlanetName"
+                            (toggledChange)="changeCurrentSpecies($event)"></species-detail>
+        </div>
+        The component used for this table is not so well compatible with small screen smartphones. This would have to
+        be improved.
+    </div>
+</div>
