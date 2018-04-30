@@ -69,7 +69,7 @@ npm-debug.log
 /__build__/**
 /public/dist/
 /src/*/dist/
-/dist/**
+#/dist/**
 /.awcache
 .webpack.json
 /compiled/
